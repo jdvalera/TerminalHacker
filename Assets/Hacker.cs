@@ -68,6 +68,21 @@ public class Hacker : MonoBehaviour {
     {
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
+        switch(level)
+        {
+            case 1:
+                password = level1Passwords[0];
+                break;
+            case 2:
+                password = level2Passwords[0];
+                break;
+            case 3:
+                password = level3Passwords[0];
+                break;
+            default:
+                Debug.LogError("Invalid level number");
+                break;
+        }
         Terminal.WriteLine("Please enter your password.");
 
     }
