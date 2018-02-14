@@ -75,7 +75,7 @@ public class Hacker : MonoBehaviour {
                 password = level2Passwords[Random.Range(0, level2Passwords.Length)];
                 break;
             case 3:
-                password = level3Passwords[0];
+                password = level3Passwords[Random.Range(0, level3Passwords.Length)];
                 break;
             default:
                 Debug.LogError("Invalid level number");
@@ -89,16 +89,61 @@ public class Hacker : MonoBehaviour {
     {
         if (input == password)
         {
-            Terminal.WriteLine("Well done!");
+            DisplayWinScreen();
         }
         else
         {
-            Terminal.WriteLine("Wrong password");
+            Terminal.WriteLine("Sorry, wrong password");
         }
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void DisplayWinScreen()
+    {
+        currentScreen = Screen.Win;
+        Terminal.ClearScreen();
+        ShowLevelReward();
+    }
+
+    void ShowLevelReward()
+    {
+        switch(level)
+        {
+            case 1:
+                Terminal.WriteLine(@"
+    _            
+   / \       _   
+  / _ \    _| |_ 
+ / ___ \  |_   _|
+/_/   \_\   |_|  
+                 
+");
+                break;
+            case 2:
+                Terminal.WriteLine(@"
+      _           _   _          
+     | |_   _ ___| |_(_) ___ ___ 
+  _  | | | | / __| __| |/ __/ _ \
+ | |_| | |_| \__ | |_| | (_|  __/
+  \___/ \__,_|___/\__|_|\___\___|
+                                                                                             
+");
+            break;
+            case 3:
+                Terminal.WriteLine("Good job Snowden!");
+                Terminal.WriteLine(@"     
+  _   _ ____    _    
+ | \ | / ___|  / \   
+ |  \| \___ \ / _ \  
+ | |\  |___) / ___ \ 
+ |_| \_|____/_/   \_\
+");
+                break;
+        }
+        Terminal.WriteLine("Well done!");
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
         int index = Random.Range(0, level1Passwords.Length);
         print(index);
