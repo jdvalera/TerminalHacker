@@ -64,17 +64,18 @@ public class Hacker : MonoBehaviour {
 
     void StartGame()
     {
+        int index = 0;
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
         switch(level)
         {
             case 1:
-                int index1 = Random.Range(0, level1Passwords.Length);
-                password = level1Passwords[index1];
+                index = Random.Range(0, level1Passwords.Length);
+                password = level1Passwords[index];
                 break;
             case 2:
-                int index2 = Random.Range(0, level2Passwords.Length);
-                password = level2Passwords[index2];
+                index = Random.Range(0, level2Passwords.Length);
+                password = level2Passwords[index];
                 break;
             case 3:
                 password = level3Passwords[0];
