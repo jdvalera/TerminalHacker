@@ -3,6 +3,7 @@
 public class Hacker : MonoBehaviour {
 
     // Game configuration data
+    const string menuHint = "You may type menu at any time.";
     string[] level1Passwords = { "Grades", "Student", "Teacher", "Test", "Salary" };
     string[] level2Passwords = { "Evidence", "Criminal", "Database", "Weaponry", "Records" };
     string[] level3Passwords = { "Cryptology", "Ionosphere", "Data-haven", "Pseudonyms", "Illuminati" };
@@ -59,6 +60,7 @@ public class Hacker : MonoBehaviour {
         else
         {
             Terminal.WriteLine("Choose a valid option.");
+            Terminal.WriteLine(menuHint);
         }
     }
 
@@ -67,6 +69,7 @@ public class Hacker : MonoBehaviour {
         currentScreen = Screen.Password;
         Terminal.ClearScreen();
         SetRandomPassword();
+        Terminal.WriteLine(menuHint);
         Terminal.WriteLine("Enter your password, hint: " + password.Anagram());
 
     }
@@ -95,6 +98,7 @@ public class Hacker : MonoBehaviour {
         if (input == password)
         {
             DisplayWinScreen();
+            Terminal.WriteLine(menuHint);
         }
         else
         {
