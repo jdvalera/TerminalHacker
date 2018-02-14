@@ -126,6 +126,7 @@ public class Hacker : MonoBehaviour {
 /_/   \_\   |_|  
                  
 ");
+                Terminal.WriteLine("Welcome to the School Database!");
                 break;
             case 2:
                 Terminal.WriteLine(@"
@@ -136,7 +137,8 @@ public class Hacker : MonoBehaviour {
   \___/ \__,_|___/\__|_|\___\___|
                                                                                              
 ");
-            break;
+                Terminal.WriteLine("Welcome to the Police Database!");
+                break;
             case 3:
                 Terminal.WriteLine("Good job Snowden!");
                 Terminal.WriteLine(@"     
@@ -146,9 +148,10 @@ public class Hacker : MonoBehaviour {
  | |\  |___) / ___ \ 
  |_| \_|____/_/   \_\
 ");
+                Terminal.WriteLine("Welcome to the NSA Database!");
                 break;
         }
-        Terminal.WriteLine("Well done!");
+        
     }
 
     // Update is called once per frame
